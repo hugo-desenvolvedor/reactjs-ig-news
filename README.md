@@ -17,6 +17,26 @@ Simple ReactJS blog application, using NextJS framework.
 * To create a new project, run `yarn create next-app <project-name>`
 * Open the created directory and run `yarn add typescript @types/react @types/node -D`
 * Rename the `_app.js` and `index.js` files to `_app.tsx` and `index.tsx`
+* Update the `_app.tsx` code:
+```
+import { AppProps } from 'next/app';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+* Clean the `index.tsx` file:
+```
+export default function Home() {
+  return (
+    <>
+      Hello World
+    </>
+  )
+}
+```
 
 ## Directory Structure
 - src
