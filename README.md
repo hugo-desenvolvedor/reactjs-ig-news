@@ -37,6 +37,27 @@ export default function Home() {
   )
 }
 ```
+* Create a `_document.tsx` file and create a class extending from `Document`:
+```
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+export default class MyDocument extends Document {
+    render() {
+        return (
+            <Html>
+                <Head>
+                </Head>
+                <body>
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        )
+    }
+}
+```
+## SASS
+* To add SASS to project, run the command `yarn add sass`
 
 ## Directory Structure
 - src
