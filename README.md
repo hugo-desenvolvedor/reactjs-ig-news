@@ -65,11 +65,13 @@ yarn add react-icons
 
 ## Directory Structure
 - src
+  - components
+    - Header
+    - SignInButton
 	- pages //Can't be renamed
 		- _app.tsx
     - _document.tsx // override the default next _document.tsx
 		- index.tsx
   - styles
     - global.scss
-    - home.module.scss
 - public
