@@ -6,7 +6,7 @@ Simple ReactJS blog application, using NextJS framework.
 ## Layout
 * [Figma](https://www.figma.com/file/KNZKHWlxtZj4RakMz17dui/ig.news-(Copy)?node-id=1%3A2)
 
-## Dependencies
+## Frameworks and integrations
 * Stripe (payment transactions api)
 * FaunaDB (database serveless applications)
 * Prismic CMS
@@ -56,8 +56,12 @@ export default class MyDocument extends Document {
     }
 }
 ```
-## SASS
-* To add SASS to project, run the command `yarn add sass`
+
+## Package Dependencies
+```
+yarn add sass
+yarn add react-icons
+```
 
 ## Directory Structure
 - src
