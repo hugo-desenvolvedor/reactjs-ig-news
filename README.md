@@ -56,6 +56,13 @@ export default class MyDocument extends Document {
     }
 }
 ```
+### Client Side Rendering
+
+### Server Side Rendering (SSR)
+- GetServerSideProps
+
+### Static Site Generation (SSG)
+- GetStaticProps
 
 ## Package Dependencies
 ```
