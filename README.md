@@ -61,17 +61,30 @@ export default class MyDocument extends Document {
 ```
 yarn add sass
 yarn add react-icons
+yarn add stripe
 ```
+
+## Stripe
+Sign in [Stripe](stripe.com), create a new product and copy the API secret key to `STRIPE_API_KEY` environment variable key.
 
 ## Directory Structure
 - src
   - components
     - Header
     - SignInButton
+    - SubscribeButton
 	- pages //Can't be renamed
 		- _app.tsx
     - _document.tsx // override the default next _document.tsx
+    - home.module.scss
 		- index.tsx
+  - services
+    - stripe.tsx
   - styles
     - global.scss
 - public
+- .env.local
+
+## Documentation
+* [Next Environment Variables](https://nextjs.org/docs/basic-features/environment-variables)
+* [Stripe API reference](https://stripe.com/docs/api)
