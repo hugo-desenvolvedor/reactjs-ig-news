@@ -64,11 +64,19 @@ export default class MyDocument extends Document {
 ### Static Site Generation (SSG)
 - GetStaticProps
 
+## Login with Github
+* Create a new [Github OAuth](github.com/settings/applications/new) application.
+* Set the `Authorization callback URL` to `http://<my_host>/api/auth/callback`.
+* Copy the `GITHUB_ID` and `GITHUB_SECRET` to `env.local`.
+* Create a api auth route in `api/auth/[...next-auth].ts` and follow the [documentation example](https://next-auth.js.org/getting-started/example).
+
 ## Package Dependencies
 ```
 yarn add sass
 yarn add react-icons
 yarn add stripe
+yarn add next-auth
+yarn add @types/next-auth -D
 ```
 
 ## Stripe
@@ -81,7 +89,10 @@ Sign in [Stripe](stripe.com), create a new product and copy the API secret key t
     - SignInButton
     - SubscribeButton
 	- pages //Can't be renamed
-		- _app.tsx
+		- api
+      - auth
+        - [...next-auth].ts
+    - _app.tsx
     - _document.tsx // override the default next _document.tsx
     - home.module.scss
 		- index.tsx
@@ -95,3 +106,5 @@ Sign in [Stripe](stripe.com), create a new product and copy the API secret key t
 ## Documentation
 * [Next Environment Variables](https://nextjs.org/docs/basic-features/environment-variables)
 * [Stripe API reference](https://stripe.com/docs/api)
+* [Getting started with Next Auth](https://next-auth.js.org/getting-started/example)
+* [Scopes for Github OAuth Apps](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps)
