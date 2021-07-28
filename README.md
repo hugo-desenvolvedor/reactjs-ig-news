@@ -77,10 +77,45 @@ yarn add react-icons
 yarn add stripe
 yarn add next-auth
 yarn add @types/next-auth -D
+yarn add faunadb
 ```
 
 ## Stripe
-Sign in [Stripe](stripe.com), create a new product and copy the API secret key to `STRIPE_API_KEY` environment variable key.
+* Sign in [Stripe](stripe.com).
+* Create a new product and copy the API secret key to `STRIPE_API_KEY` environment variable key.
+* Create the `stripe.tsx` file service:
+```
+import Stripe from 'stripe';
+import { version } from '../../package.json';
+
+export const stripe = new Stripe(
+    process.env.STRIPE_API_KEY,
+    {
+        apiVersion: '<my_api_version>',
+        appInfo: {
+            name: '<my_api_name>',
+            version
+        }
+    }
+);
+```
+## FaunaDB
+* Sign in [FaunaDB](fauna.com).
+* Create a database
+* Create a api key and copy to `FAUNADB_KEY` environment variable key.
+* Create a `users` collection
+* Create a unique index:
+  * index name: `user_by_email`.
+  * terms: `data.email`.
+* Create the `fauna.tsx` file service:
+```
+import { Client } from 'faunadb';
+
+export const fauna = new Client({
+    secret: process.env.FAUNADB_KEY
+})
+```
+
 
 ## Directory Structure
 - src
@@ -98,6 +133,7 @@ Sign in [Stripe](stripe.com), create a new product and copy the API secret key t
 		- index.tsx
   - services
     - stripe.tsx
+    - fauna.tsx
   - styles
     - global.scss
 - public
@@ -108,3 +144,4 @@ Sign in [Stripe](stripe.com), create a new product and copy the API secret key t
 * [Stripe API reference](https://stripe.com/docs/api)
 * [Getting started with Next Auth](https://next-auth.js.org/getting-started/example)
 * [Scopes for Github OAuth Apps](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps)
+* [How to resolve jwt_auto_generated_signing_key warning](https://github.com/nextauthjs/next-auth/issues/484)
