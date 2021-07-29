@@ -16,14 +16,14 @@ export default NextAuth({
       const { email } = user;
 
       try {
-        // TODO: fix the fauna db query error
-        /* 
-          await fauna.query(
+        await fauna.query(
           q.If(
             q.Not(
-              q.Match(
-                q.Index('user_by_email'),
-                q.Casefold(user.email)
+              q.Exists(
+                q.Match(
+                  q.Index('user_by_email'),
+                  q.Casefold(user.email)
+                )
               )
             ),
             q.Create(
@@ -36,14 +36,11 @@ export default NextAuth({
                 q.Casefold(user.email)
               )
             )
-
           )
         )
-        */
 
         return true;
       } catch (e) {
-        console.log('error', e)
         return false;
       }
     },
