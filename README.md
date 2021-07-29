@@ -56,7 +56,9 @@ export default class MyDocument extends Document {
     }
 }
 ```
-### Client Side Rendering
+### Client Side Rendering (Api routes)
+- 
+
 
 ### Server Side Rendering (SSR)
 - GetServerSideProps
@@ -116,7 +118,6 @@ export const fauna = new Client({
 })
 ```
 
-
 ## Directory Structure
 - src
   - components
@@ -127,6 +128,7 @@ export const fauna = new Client({
 		- api
       - auth
         - [...next-auth].ts
+      - subscribe.ts
     - _app.tsx
     - _document.tsx // override the default next _document.tsx
     - home.module.scss
