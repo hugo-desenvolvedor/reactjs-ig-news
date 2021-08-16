@@ -103,6 +103,15 @@ export const stripe = new Stripe(
     }
 );
 ```
+* Run the Stripe CLI:
+```
+stripe login
+```
+* Run the Stripe Listener:
+```
+stripe listen --forward-to localhost:3000/api/webhooks
+```
+
 ## FaunaDB
 * Sign in [FaunaDB](fauna.com).
 * Create a database
@@ -131,6 +140,7 @@ export const fauna = new Client({
       - auth
         - [...next-auth].ts
       - subscribe.ts
+      - webhooks.ts
     - _app.tsx
     - _document.tsx // override the default next _document.tsx
     - home.module.scss
@@ -150,3 +160,4 @@ export const fauna = new Client({
 * [Getting started with Next Auth](https://next-auth.js.org/getting-started/example)
 * [Scopes for Github OAuth Apps](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps)
 * [How to resolve jwt_auto_generated_signing_key warning](https://github.com/nextauthjs/next-auth/issues/484)
+* [Stripe CLI](https://stripe.com/docs/stripe-cli)
