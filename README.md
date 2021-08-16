@@ -111,6 +111,7 @@ stripe login
 ```
 stripe listen --forward-to localhost:3000/api/webhooks
 ```
+* Copy the webhook signing secret to `STRIPE_WEBHOOK_SECRET` environment key. 
 
 ## FaunaDB
 * Sign in [FaunaDB](fauna.com).
