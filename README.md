@@ -130,6 +130,10 @@ export const fauna = new Client({
 })
 ```
 
+# Prismic
+* On [prismic.io](prismic.io/), create a new Project and custom type.
+* Create a permanent access token and set the value to `PRISMIC_ACCESS_TOKEN` environment variable.
+
 ## Directory Structure
 - src
   - components
