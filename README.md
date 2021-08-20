@@ -82,6 +82,30 @@ yarn add @types/next-auth -D
 yarn add faunadb
 yarn add axios
 yarn add @stripe/stripe-js
+yarn add @prismicio/client
+yarn add prismic-dom
+yarn add @types/prismic-dom
+```
+
+## Environment variables
+```
+# Stripe
+STRIPE_API_KEY=
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=
+STRIPE_WEBHOOK_SECRET=
+STRIPE_SUCCESS_URL=http://localhost:3000/posts
+STRIPE_CANCEL_URL=http://localhost:3000
+
+# Github
+GITHUB_ID=
+GITHUB_SECRET=
+
+# FaunaDB
+FAUNADB_KEY=
+
+# Prismic CMS
+PRISMIC_ACCESS_TOKEN=
+PRISMIC_API_ENDPOINT=https://ignews-hugo-desenvolvedor.prismic.io/api/v2
 ```
 
 ## Stripe
@@ -137,23 +161,30 @@ export const fauna = new Client({
 ## Directory Structure
 - src
   - components
+    - ActiveLink
     - Header
     - SignInButton
     - SubscribeButton
 	- pages //Can't be renamed
 		- api
+      - _lib
+        - manageSubscriptions
       - auth
         - [...next-auth].ts
       - subscribe.ts
       - webhooks.ts
+      - posts
+        - index.tsx
     - _app.tsx
     - _document.tsx // override the default next _document.tsx
     - home.module.scss
 		- index.tsx
   - services
     - api.ts
-    - stripe.tsx
     - fauna.tsx
+    - prismic.ts
+    - stripe-js.ts
+    - stripe.tsx
   - styles
     - global.scss
 - public
