@@ -57,14 +57,13 @@ export default class MyDocument extends Document {
 }
 ```
 ### Client Side Rendering (Api routes)
-- 
-
+* Generate dinamic in the frontend. Not SEO friendly.
 
 ### Server Side Rendering (SSR)
-- GetServerSideProps
+* GetServerSideProps: get the API data every time, and can restrict the access based on user or rule.
 
 ### Static Site Generation (SSG)
-- GetStaticProps
+* GetStaticProps: get the API data once and create a static page, visible for everyone. This page is cached, friendly for SEO, and can be updated in a configurated time.
 
 ## Login with Github
 * Create a new [Github OAuth](github.com/settings/applications/new) application.
@@ -174,7 +173,10 @@ export const fauna = new Client({
       - subscribe.ts
       - webhooks.ts
       - posts
+        - [slug].tsx
         - index.tsx
+        - post.module.scss
+        - styles.module.scss
     - _app.tsx
     - _document.tsx // override the default next _document.tsx
     - home.module.scss
