@@ -173,6 +173,8 @@ export const fauna = new Client({
       - subscribe.ts
       - webhooks.ts
       - posts
+        - preview
+          - [slug].tsx
         - [slug].tsx
         - index.tsx
         - post.module.scss
